@@ -1,0 +1,63 @@
+.nav-menu > div{
+  align-self: center;
+}
+.header-menu {
+  position: relative;
+  min-width: 200px;
+}
+.header-menu svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: #fff;
+  
+  font-weight: bold;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.header-menu select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border:none;
+  border-radius: 5px;
+  background: transparent;
+  color:#fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 150ms ease;
+}
+.header-menu select:required:invalid {
+  color: #fff;
+}
+.header-menu select option {
+  color: #fff;
+  background: #b22222;
+}
+.header-menu select option[value=""][disabled] {
+  display: none;
+}
+.header-menu select:focus {
+  outline: none;
+  border:none;
+  box-shadow: none;
+}
+.header-menu select:hover + svg {
+  stroke: #0077ff;
+}
+
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Roboto", "Oxygen", sans-serif;
+}
+header {
+  display: flex;
+  background: #bf0811;
+  padding: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+section {
+  display: flex;
+  > div {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .card {
+    text-align: left;
+    border-bottom: 1px solid;
+    h3 {
+      text-transform: uppercase;
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: #b22222;
+      display: block;
+      width: 50%;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        margin: 0;
+      }
+      > div.body-option {
+        text-align: right;
+      }
+    }
+  }
+  .centro-bar {
+    background-color: #343434;
+    color: #fff;
+    .card span {
+      color: #fff;
+    }
+  }
+}
+.btn {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  &.reverse {
+    color: #fff;
+    border: 1px solid #fff;
+    &:hover{
+      color:#000;
+      background: #fff;
+    }
+  }
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+$margins: 5, 10, 15, 20;
+
+@each $m in $margins {
+  .mb-#{$m} {
+    margin-bottom: #{$m}px;
+  }
+  .mt-#{$m} {
+    margin-top: #{$m}px;
+  }
+  .ml-#{$m} {
+    margin-left: #{$m}px;
+  }
+  .mr-#{$m} {
+    margin-right: #{$m}px;
+  }
+}
