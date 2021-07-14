@@ -24,10 +24,9 @@ app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   return next();
 });
-routes.init(app); /*
-const PORT = process.env.PORT || 3080;
+routes.init(app); 
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Listen on http://localhost:${PORT}`);
-});*/
-module.exports = app;
+app.listen(PORT);
+
+//module.exports = app;
