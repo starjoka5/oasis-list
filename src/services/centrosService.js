@@ -8,7 +8,7 @@ const options = {
 };
 const getCentros = (tipoCentro, filter) => {
   return fetch(
-    `${API}/hoteles/${filter.hotel}/centros-consumo?categoria=${tipoCentro}&filterDate=${filter.filterDate}&filterTime=${filter.filterTime}`,
+    `${API}/hoteles/${filter.hotel}/centros-consumo?categoria=${tipoCentro}&filterDate=${filter.filterDate}}`,
     options
   ).then((res) => res.json());
 };
