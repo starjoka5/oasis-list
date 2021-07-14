@@ -61,7 +61,7 @@ const getInfo = (req, res) => {
   });
 };
 
-router.get("/hoteles/:id/centros-consumo", getAllByCategoria);
 router.get("/hoteles", getAllHoteles);
-router.get("/centro-consumo", getInfo);
+router.get("/hoteles/:id/centros-consumo", getAllByCategoria);
+//router.get("/centro-consumo", getInfo);
 module.exports = router;
