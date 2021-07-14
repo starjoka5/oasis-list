@@ -1,8 +1,7 @@
-const centroConsumo = require("./centro_consumo");
-const hotel = require("./hotel");
+
+const routes = require("./routes");
 function init(app) {
-  app.use("/api", centroConsumo);
-  app.use("/api", hotel);
+  app.use("/api", routes);
 }
 
 module.exports = {

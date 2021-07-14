@@ -8,13 +8,18 @@ const sequelize = new Sequelize(
   {
     host: config.database_host,
     dialect: "mysql",
-  },
+    logging: null,
+    dialectOptions: {
+      timezone: "-05:00",
+    },
+    timezone: "-05:00",
+  }
 );
 
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Connection to db [success]");
+    
   })
   .catch((error) => {
     console.error("Error: ", error);

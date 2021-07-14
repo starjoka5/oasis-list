@@ -6,10 +6,16 @@ const options = {
     "Content-Type": "application/json",
   },
 };
-const getCentros = (tipoCentro, hotel) => {
-  return fetch(`${API}/hotel/${hotel}/centro-consumo/${tipoCentro}`, options).then((res) =>
+const getCentros = (tipoCentro, filter) => {
+  return fetch(
+    `${API}/hoteles/${filter.hotel}/centros-consumo?categoria=${tipoCentro}&filterDate=${filter.filterDate}&filterTime=${filter.filterTime}`,
+    options
+  ).then((res) => res.json());
+};
+const getCentroInfo = (idHorario) => {
+  return fetch(`${API}/centro-consumo/${idHorario}`, options).then((res) =>
     res.json()
   );
 };
 
-export { getCentros };
+export { getCentros, getCentroInfo };

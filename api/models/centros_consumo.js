@@ -1,8 +1,9 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require(".");
 const Categorias = require("./categorias");
+const CentrosConsumoDetalles = require("./centros_consumo_detalles");
 const CentrosConsumoHorarios = require("./centros_consumo_horarios");
-const Hoteles = require("./hoteles");
+//const Hoteles = require("./hoteles");
 
 
 const CentrosConsumo = sequelize.define(
@@ -43,6 +44,7 @@ const CentrosConsumo = sequelize.define(
   }
 );
 CentrosConsumo.belongsTo(Categorias, { foreignKey: "categoria_id" });
-CentrosConsumo.hasOne(CentrosConsumoHorarios, { foreignKey: "centro_consumo_id" });
-CentrosConsumo.belongsToMany(Hoteles,{through:'centros_consumo_detalles',foreignKey:'centro_consumo_id',otherKey:'hotel_id'})
+CentrosConsumo.hasMany(CentrosConsumoHorarios, { foreignKey: "centro_consumo_id" });
+CentrosConsumo.hasMany(CentrosConsumoDetalles, { foreignKey: "centro_consumo_id" });
+//CentrosConsumo.belongsToMany(Hoteles,{through:'centros_consumo_detalles',foreignKey:'centro_consumo_id',otherKey:'hotel_id'})
 module.exports = CentrosConsumo;

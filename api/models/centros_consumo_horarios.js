@@ -16,7 +16,8 @@ const CentrosConsumoHorarios = sequelize.define(
       type: DataTypes.INTEGER,
     },
     dia: {
-      type: DataTypes.ENUM('0','1','2','3','4','5','6'),
+      type: DataTypes.ENUM,
+      values:['0','1','2','3','4','5','6']
     },
     horaInicio: {
       field: "hora_inicio",
