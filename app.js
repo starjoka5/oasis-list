@@ -13,8 +13,8 @@ sequelize.sync();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "dist")));
-app.use("/", express.static(path.join(__dirname, "dist ")));
+app.use(express.static(path.join(__dirname, "build")));
+app.use("/", express.static(path.join(__dirname, "build ")));
 app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -24,7 +24,7 @@ app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   return next();
 });
-routes.init(app);/*
+routes.init(app); /*
 const PORT = process.env.PORT || 3080;
 
 app.listen(PORT, () => {

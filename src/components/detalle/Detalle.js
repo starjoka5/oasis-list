@@ -1,5 +1,5 @@
 import { format, parse } from "date-fns";
-import React, { useEffect } from "react";
+import React from "react";
 import { PUBLIC_URL } from "../../config";
 import "./detalle.scss";
 
